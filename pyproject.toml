@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 # see https://packaging.python.org/en/latest/specifications/pyproject-toml/
-name = "gunicorn"
+name = "slamcore-gunicorn"
 authors = [{name = "Benoit Chesneau", email = "benoitc@gunicorn.org"}]
 license = "MIT"
 license-files = ["LICENSE"]
@@ -37,7 +37,7 @@ requires-python = ">=3.10"
 dependencies = [
     "packaging",
 ]
-dynamic = ["version"]
+version = "0.1.0"
 
 [project.urls]
 Homepage = "https://gunicorn.org"
@@ -87,6 +87,3 @@ include-package-data = true
 
 [tool.setuptools.packages]
 find = {namespaces = false}
-
-[tool.setuptools.dynamic]
-version = {attr = "gunicorn.__version__"}

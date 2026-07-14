@@ -2,7 +2,11 @@
 # This file is part of gunicorn released under the MIT license.
 # See the NOTICE for more information.
 
-version_info = (26, 0, 0)
-__version__ = ".".join([str(v) for v in version_info])
+from importlib.metadata import version, PackageNotFoundError
+
+try:
+    __version__ = version("slamcore-gunicorn")
+except PackageNotFoundError:
+    __version__ = "unknown"
 SERVER = "gunicorn"
 SERVER_SOFTWARE = "%s/%s" % (SERVER, __version__)
